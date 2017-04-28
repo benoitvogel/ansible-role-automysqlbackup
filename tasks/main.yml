@@ -1,5 +1,7 @@
 
 - include: install.yml
 - include: configure.yml
+- include: hooks.yml
+  when: automysqlbackup_enable_pre_hook == True and automysqlbackup_enable_post_hook == True
 - include: monit.yml
   when: automysqlbackup_define_monit_service

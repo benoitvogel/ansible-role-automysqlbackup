@@ -59,3 +59,26 @@ automysqlbackup_required_apt_packages:
   - cron
   - gzip
   - pigz
+
+# Pre and Post hooks
+automysqlbackup_enable_pre_hook: false
+automysqlbackup_enable_post_hook: false
+
+# Pre and ppost hook file paths
+## src - defines where on the local machine to look
+## for the file
+## dest - defines where on the remote host to place 'src' file
+automysqlbackup_hook_files:
+  - src: 'files/mysql-backup-pre.sample'
+    dest: '/etc/mysql-backup-pre'
+  - src: 'files/mysql-backup-post.sample'
+    dest: '/etc/mysql-backup-post'
+
+## example.
+# automysqlbackup_hook_files:
+#   - src: 'files/automysqlbackup-hooks/mysql-backup-pre'
+#     dest: '/etc/mysql-backup-pre'
+#   - src: 'files/automysqlbackup-hooks/mysql-backup-post'
+#     dest: '/etc/mysql-backup-post'
+
+# Ansible will look for pre/post files in the `{{ project_root }}/files/automysqlbackup-hooks` folder
