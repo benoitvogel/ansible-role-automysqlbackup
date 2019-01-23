@@ -28,6 +28,9 @@ automysqlbackup_rotation_daily: '6'
 automysqlbackup_rotation_weekly: '35'
 automysqlbackup_rotation_monthly: '150'
 
+automysqlbackup_mysql_dump_port: 3306
+automysqlbackup_mysql_dump_usessl: 'yes'
+
 automysqlbackup_mysql_dump_single_transaction: 'yes'
 automysqlbackup_mysql_dump_dbstatus: 'yes'
 automysqlbackup_mysql_dump_create_database: 'no'
